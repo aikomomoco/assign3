@@ -203,8 +203,8 @@ void mousePressed(){
        mouseY >= iy && mouseY <= iy+sideLength){
       
           for (int i=0; i<16; i++){
-           int row =i/nSlot;
-         int col = i%nSlot;
+           int row =int(i/nSlot);
+         int col = int(i%nSlot);
         if(mouseX>=(ix + col*SLOT_SIZE)&&mouseX<(ix + col*SLOT_SIZE+100)&&mouseY>=(iy + row*SLOT_SIZE)&&mouseY<(iy + row*SLOT_SIZE+100)){
              clickCount= clickCount+1;
        if (slot[col][row]==SLOT_BOMB){
