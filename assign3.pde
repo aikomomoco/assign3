@@ -233,9 +233,7 @@ void mousePressed(){
           gameState=GAME_LOSE;
            }else{ 
              showSlot(col,row, SLOT_SAFE);
-             if(clickCount==(totalSlots-bombCount)){
-                gameState=GAME_WIN;
-             }
+           
            } 
         }
     }
