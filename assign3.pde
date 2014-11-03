@@ -108,7 +108,7 @@ int countNeighborBombs(int col,int row){
     count++;
  }
   
-  }
+  
     return count;
  }
    
