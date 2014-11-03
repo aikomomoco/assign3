@@ -88,14 +88,9 @@ void draw(){
 }
 int count;
 int countNeighborBombs(int col,int row){
-  if( slot[col][row] == SLOT_SAFE){
-   if((countNeighborBombs(col-1,row-1)>=1)&&( countNeighborBombs(col,row-1)>=1)&&( countNeighborBombs(col+1,row-1)>=1)&&(countNeighborBombs(col-1,row)>=1)&&(countNeighborBombs(col+1,row)>=1)&&(countNeighborBombs(col-1,row+1)>=1)&&(countNeighborBombs(col,row+1)>=1)&&(countNeighborBombs(col+1,row+1)>=1)){
-         count++;
-       }else{
+ 
    return 0;
- }
-  }    
-  return count;  
+
 }
   
   
