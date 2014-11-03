@@ -86,9 +86,9 @@ void draw(){
           break;
   }
 }
-int count=0;
+
 int countNeighborBombs(int col,int row){
-  
+  for(int count=-1;count<=8,count++){
    if(slot[col-1][row-1]==SLOT_BOMB){
     count++;
   }
@@ -108,7 +108,7 @@ int countNeighborBombs(int col,int row){
     count++;
  }
   
-  
+  }
     return count;
  }
    
