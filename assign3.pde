@@ -110,9 +110,9 @@ void setBombs(){
     }
     if(bombCount>1){
         for(int i=1;i<bombCount;i++){
-          int col=int (random(5));
-          int row=int (random(5));
-          slot[col*i][row*i]= SLOT_BOMB;
+          int col=int (random(4));
+          int row=int (random(4));
+         slot[col][row] = SLOT_BOMB;
        
 
     }
