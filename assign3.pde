@@ -112,7 +112,7 @@ void setBombs(){
           int col=int (random(4));
           int row=int (random(4));
           if(slot[col][row] ==SLOT_OFF){
-     slot[a][b]=SLOT_BOMB;
+     slot[col][row]=SLOT_BOMB;
    }else if (slot[col][row] ==SLOT_BOMB){
      i-=1;
    }
