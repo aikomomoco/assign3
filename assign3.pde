@@ -95,18 +95,10 @@ if( slot[col+a][row+b] == SLOT_BOMB){
 count = count + 1;
 }
 }
-
-//
 }
   }
     return count;
-   
  }
-
-
-
-  
-  
 
 void setBombs(){
   // initial slot
@@ -125,9 +117,11 @@ void setBombs(){
         for(int i=1;i<bombCount;i++){
           int col=int (random(4));
           int row=int (random(4));
-         slot[col][row] = SLOT_BOMB;
-       
-
+          if(slot[col][row] ==SLOT_OFF){
+     slot[a][b]=SLOT_BOMB;
+   }else if (slot[col][row] ==SLOT_BOMB){
+     i-=1;
+   }
     }
   }
     }
