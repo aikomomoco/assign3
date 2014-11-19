@@ -108,13 +108,7 @@ void setBombs(){
     }
      
   }
-   if(bombCount==1){
-    int col=int (random(4));
-     int row=int (random(4));
-     slot[col][row] = SLOT_BOMB;
-    }
-    if(bombCount>1){
-        for(int i=1;i<bombCount;i++){
+        for(int i=0;i<bombCount;i++){
           int col=int (random(4));
           int row=int (random(4));
           if(slot[col][row] ==SLOT_OFF){
@@ -123,7 +117,6 @@ void setBombs(){
      i-=1;
    }
     }
-  }
     }
   
      
