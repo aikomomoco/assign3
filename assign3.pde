@@ -54,7 +54,7 @@ void draw(){
     case GAME_START:
           background(180);
           image(bg,0,0,640,480);
-         textFont(loadFont("font/Square_One.ttf"),16);
+           textFont(loadFont("font/Square_One.ttf"),16);
           fill(0);
           text("Choose # of bombs to continue:",10,width/3-24);
           int spacing = width/9;
@@ -80,17 +80,18 @@ void draw(){
           text("YOU WIN !!",width/3,30);
           break;
     case GAME_LOSE:
-          textFont(loadFont("font/Square_One.ttf"),18);
+        textFont(loadFont("font/Square_One.ttf"),18);
           fill(0);
           text("YOU LOSE !!",width/3,30);
           break;
   }
 }
-int  count=0;
+
 int countNeighborBombs(int col,int row){
-  if(col>=0&&col<=3&&row>=0&&row<=3&& count<=8){
+  int  count=0;
 for(int a=-1;a<=1;a++){
 for(int b=-1;b<=1;b++){
+  if(col+a>=0&&col+a<=3&&row+b>=0&&row+b<=3&& count<=8){
 if( slot[col+a][row+b] == SLOT_BOMB){
 count = count + 1;
 }
@@ -115,23 +116,19 @@ void setBombs(){
     }
      
   }
-   if(bombCount==1){
-    int col=int (random(4));
+  for(int i=0;i<bombCount;i++){
+     int col=int (random(4));
      int row=int (random(4));
-     slot[col][row] = SLOT_BOMB;
+     if(slot[col][row] != SLOT_BOMB){
+      slot[col][row] = SLOT_BOMB;
+     }else if(slot[col][row] == SLOT_BOMB){
+       bombCount++;
+     }
     }
-    if(bombCount>1){
-        for(int i=1;i<bombCount;i++){
-          int col=int (random(4));
-          int row=int (random(4));
-         slot[col][row] = SLOT_BOMB;
-       
-
-    }
-  }
-    }
+}
+    
   
-     
+
 
 
 
